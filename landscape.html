@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/landscapestyle.css">
+    <title>CSS Grid Responsive Site</title>
+	
+</head>
+<!-- Body -->
+<body>
+
+<!-- Header -->
+    <header >
+
+<h1> QUEEN RESTRANT  </h1>
+</header>
+
+<!-- Galary -->
+<div class="container">
+ 
+  <div class="desc">
+    <div class="tittle">
+      <h1 class="judul">Our Restrrant</h1>
+      <p class="text">Visit Us And Enjoy </p>
+    </div>
+ 
+    <div class="imgsrc">
+      <img src="https://blog.amigofoods.com/wp-content/uploads/2019/04/argentinian-asado-chimichurri.jpg" class="prev">
+    </div>
+  </div>
+ 
+  <div class="thumbnail">
+    <img src="https://loveincorporated.blob.core.windows.net/contentimages/gallery/352faeb5-95f6-41e6-af4c-24ac02b46511-fried-chicken.jpg" class="thumb">
+ 
+    <img src="https://loveincorporated.blob.core.windows.net/contentimages/gallery/70bc81c8-b277-407d-8c3a-5c1a3e501732-4-hamburger.jpg" class="thumb">
+ 
+    <img src="https://just-eat-prod-eu-res.cloudinary.com/image/upload/c_fill,f_auto,q_auto,w_1600,h_500,d_uk:cuisines:seafood-5.jpg/v1/uk/restaurants/162165.jpg" class="thumb">
+ 
+    <img src="https://dynl.mktgcdn.com/p/hxJgH_gPUGuHQPqGidqaJNMl9pbQqLO7esOuNzfyw8o/496x344.png" class="thumb">
+ 
+    <img src="https://static.toiimg.com/thumb/53096885.cms?imgsize=1572013&width=509&height=340" class="thumb">
+ 
+    <img src="https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/strawberry_and_banana_24556_16x9.jpg" class="thumb">
+ 
+  </div>
+</div>
+<!-- Java Script To Move on Galary -->
+
+<script>
+const container = document.querySelector(".container");
+const preview = document.querySelector(".prev");
+const active = document.querySelectorAll(".thumb");
+ 
+container.addEventListener("click", function (e) {
+  if (e.target.className == "thumb") {
+    preview.src = e.target.src;
+    preview.classList.add("effect");
+ 
+    setTimeout(function () {
+      preview.classList.remove("effect");
+    }, 100);
+ 
+    active.forEach(function (thumb) {
+      if (thumb.classList.contains("active")) {
+        thumb.classList.remove("active");
+      }
+    });
+ 
+    e.target.classList.add("active");
+  }
+});
+</script>
+
+</body>
+
+
+    <!-- Footer -->
+	
+    <footer>
+  <h1>Beautiful Taste and Beautiful Nature</h1>
+
+</footer>
+
+</body>
+
+</html>
